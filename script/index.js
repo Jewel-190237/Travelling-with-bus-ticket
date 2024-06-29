@@ -130,11 +130,13 @@ function handleCouponInput() {
     if (couponCode === 'NEW15') {
         const discount = total * 0.15;
         const finalTaka = total - discount;
-        applyInfo(finalTaka); // Update the grand total with discounted amount
+        applyInfo(finalTaka);
+        hideCuppon(); // Update the grand total with discounted amount
     } else if (couponCode === 'Couple 20') {
         const discount = total * 0.20;
         const finalTaka = total - discount;
-        applyInfo(finalTaka); // Update the grand total with discounted amount
+        applyInfo(finalTaka);
+        hideCuppon(); // Update the grand total with discounted amount
     } else {
         
         applyInfo(total);
@@ -172,15 +174,8 @@ function nextWork(idValue){
     const seatValue = seatText.innerText;
 }
 
-//     if((elementText.length == 11) && (seatValue.length > 0)){
-
-//         const elementText = document.getElementById('next-button')
-//         elementText.classList.add('hidden');
-        
-//         const elementValue = document.getElementById('open-success');
-//         elementValue.classList.remove('hidden');
-//     }
-// }
-
-
+function hideCuppon(){
+    const element = document.getElementById('cupon');
+    element.classList.add('hidden');
+}
 
